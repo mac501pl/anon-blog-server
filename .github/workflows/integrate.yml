@@ -8,15 +8,15 @@ jobs:
     steps:
     
     - name: Checkout
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
 
     - name: Setup node
-    - uses: actions/setup-node@v1
+      uses: actions/setup-node@v1
       with:
         node-version: 12
 
     - name: Setup env
-    - uses: c-py/action-dotenv-to-setenv@v2
+      uses: c-py/action-dotenv-to-setenv@v2
       with:
         env-file: .env
 
