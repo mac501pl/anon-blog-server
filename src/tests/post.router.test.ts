@@ -5,9 +5,6 @@ import app from '../index';
 describe('POST /posts', () => {
   it('tests endpoint', async done => {
     const result = await request(app).post('/posts/add').send({ content: 'test', posterId: '123' });
-
-    console.log(result.body);
-    
     expect(result.status).toEqual(201);
     done();
   });
