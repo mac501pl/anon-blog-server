@@ -15,7 +15,7 @@ app.use(express.json());
 
 mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false })
   .then(()=> {
-    console.log('MongoDB database connected!', dbUri);
+    console.log('MongoDB database connected! ', dbUri);
   }).catch(error => {
     console.error(error);
     console.error('Connection string:', dbUri);
