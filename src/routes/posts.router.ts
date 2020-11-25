@@ -14,7 +14,7 @@ router.route('/').get(
       const posts: Array<IPost> = await Post.find({}, null, { sort: { created: -1 } });
       res.json(posts);
     } catch (err) {
-      res.status(400).json((err as Error).message);
+      res.status(500).json((err as Error).message);
     }
   }
 );
