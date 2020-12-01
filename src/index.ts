@@ -8,7 +8,7 @@ dotenv.config({ path: __dirname + '../../.env' });
 
 const app = express();
 const port = 5000;
-const dbUri = (process.env.NODE_ENV === 'development' ? 'mongodb://mongo:27017/dev' : 'mongodb://localhost:27017/test') ?? '';
+const dbUri = process.env.NODE_ENV === 'development' ? 'mongodb://mongo:27017/dev' : 'mongodb://localhost:27017/test';
 
 console.log(process.env);
 
