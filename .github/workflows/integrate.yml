@@ -36,4 +36,6 @@ jobs:
           cd anon-blog-server
           git pull origin master
           docker-compose down
+          docker-compose rm -f
+          docker-compose build
           docker-compose up -d
