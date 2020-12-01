@@ -10,8 +10,6 @@ const app = express();
 const port = process.env.PORT || 5000;
 const dbUri = (process.env.NODE_ENV === 'development' ? process.env.MONGO_URI : process.env.MONGO_URI_TEST) ?? '';
 
-console.log('env', process.env);
-
 app.use(cors());
 app.use(express.json());
 
