@@ -1,0 +1,8 @@
+node_modules
+.github
+dist
+src/tests
+.eslintignore
+.eslintrc.js
+.gitignore
+jest.config.js
