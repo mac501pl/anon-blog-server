@@ -7,8 +7,10 @@ import postsRouter from './routes/posts.router';
 dotenv.config({ path: __dirname + '../../.env' });
 
 const app = express();
-const port = process.env.PORT || 5000;
-const dbUri = (process.env.NODE_ENV === 'development' ? process.env.MONGO_URI : process.env.MONGO_URI_TEST) ?? '';
+const port = 5000;
+const dbUri = (process.env.NODE_ENV === 'development' ? 'mongodb://mongo:27017/dev' : 'mongodb://localhost:27017/test') ?? '';
+
+console.log(process.env);
 
 app.use(cors());
 app.use(express.json());
