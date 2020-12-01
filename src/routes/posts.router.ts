@@ -19,6 +19,11 @@ router.route('/').get(
   }
 );
 
+router.route('/test').get(
+  (_req: Request, res: Response<Array<IPost> | string>): void => {
+    res.json('works!!!!');
+  });
+
 router.route('/add').post(
   async (req: IRequestWithPostBody, res: Response<IPost | string>): Promise<void> => {
     const { body: { content, posterId } } = req;
