@@ -3,7 +3,7 @@ services:
   web:
     env_file:
       - .env
-    container_name: anon-blog-server
+    container_name: server
     restart: always
     build: .
     ports:
