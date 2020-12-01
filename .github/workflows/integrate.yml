@@ -15,10 +15,10 @@ jobs:
       with:
         node-version: 12
 
-    - name: Setup env
-      uses: c-py/action-dotenv-to-setenv@v2
-      with:
-        env-file: .env
+    # - name: Setup env
+    #   uses: c-py/action-dotenv-to-setenv@v2
+    #   with:
+    #     env-file: .env
 
     - name: Start MongoDB
       uses: supercharge/mongodb-github-action@1.3.0
