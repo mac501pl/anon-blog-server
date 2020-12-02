@@ -6,9 +6,22 @@ import postsRouter from './routes/posts.router';
 
 dotenv.config({ path: __dirname + '../../.env' });
 
+const getDbUri = (): string => {
+  switch (process.env.NODE_ENV) {
+  case 'development':
+    return 'mongodb://localhost:27017/dev';
+  case 'production':
+    return 'mongodb://mongo:27017/dev';
+  case 'test':
+    return 'mongodb://localhost:27017/test';
+  default:
+    throw Error('Invalid environment!');
+  }
+}
+
 const app = express();
 const port = 5000;
-const dbUri = process.env.NODE_ENV === 'development' ? 'mongodb://mongo:27017/dev' : 'mongodb://localhost:27017/test';
+const dbUri = getDbUri();
 
 app.use(cors());
 app.use(express.json());
@@ -31,7 +44,7 @@ mongoose.connection.on('error', error => {
 
 app.use('/posts', postsRouter);
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV !== 'test') {
   app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
   })
