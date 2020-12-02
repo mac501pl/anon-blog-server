@@ -1,3 +1,9 @@
+Serwer dla aplikacji anon-blog.
+
+Napisany jest w języku Typescript z wykorzystaniem biblioteki express. Jest to usługa sieciowa opierająca swoje działanie na protokole HTTP. Odpowiedzi zwracane przez serwis dostępne są w formacie JSON. Jako baza danych używana jest mongodb. Endpointy opisane są w tabeli poniżej. Wszystkie endpointy z wyjątkiem pierwszego wymagają w swoim body id użytkownika, które zapisywane jest w ciasteczku w celu weryfikacji uprawnineń do wykonywania pewnych czynności (np. usuwania, modyfikacji posta/komentarza).
+
+Testy dla aplikacji napisane są z użyciem bibilioteki jest wraz z pluginem ts-jest.
+
 | Endpoint                                           | Metoda | Opis                                              |
 |----------------------------------------------------|--------|---------------------------------------------------|
 | /posts                                             | GET    | Pobierz wszystkie posty i informacje na ich temat |
